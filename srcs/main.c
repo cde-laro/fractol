@@ -27,6 +27,7 @@ void		display_usage(void)
 {
 	ft_putendl_fd("Incorrect usage: ./fractol [fractal name]", 2);
 	ft_putendl_fd("Available fractals : mandelbrot, julia and burning-ship", 2);
+	exit (0);
 }
 
 int			main(int ac, char **av)
