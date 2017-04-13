@@ -6,7 +6,7 @@
 /*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:45:04 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/20 19:12:53 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/03/23 16:30:46 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ int		mouse_click(int button, int x, int y, t_env *e)
 			e->c->zoom = 10;
 			return (0);
 		}
-		iter_mandel(e, e->c->iter / 1.1);
+		e->c->iter /= 1.1;
 		if (e->c->iter < 1)
-			iter_mandel(e, 1);
+			e->c->iter = 1;
 	}
 	else if (button == 1)
 	{
 		zoom_to_mouse(e, x, y, 0.7);
-		iter_mandel(e, e->c->iter * 1.2);
+		e->c->iter *= 1.2;
 	}
 	draw(e);
 	return (0);

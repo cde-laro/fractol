@@ -6,26 +6,12 @@
 /*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:44:32 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/20 19:14:08 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/03/23 16:37:21 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
-
-void		iter_mandel(t_env *e, int iter)
-{
-	int		i;
-
-	i = 0;
-	e->c->iter = iter;
-	e->c->color = (int *)malloc(sizeof(int) * iter);
-	while (i < iter)
-	{
-		e->c->color[i] = i * 255 / iter;
-		i++;
-	}
-}
 
 void		img_mandel(t_env *e)
 {
@@ -41,7 +27,7 @@ void		init_mandel(t_env *e)
 	e->c->a.x = 0;
 	e->c->a.y = 0;
 	e->c->zoom = 5;
-	iter_mandel(e, 40);
+	e->c->iter = 40;
 }
 
 void		mandelbrot(t_env *e)

@@ -6,7 +6,7 @@
 /*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 16:44:27 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/20 19:09:35 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:34:44 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void	move(t_env *e, int k)
 void	iter(t_env *e, int k)
 {
 	if (k == KEY_PAD_6)
-		iter_mandel(e, e->c->iter * 1.05);
+		e->c->iter *= 1.05;
 	else
 	{
-		iter_mandel(e, e->c->iter * 0.95);
+		e->c->iter *= 0.95;
 		if (e->c->iter < 20)
 			e->c->iter = 20;
 	}
@@ -70,6 +70,11 @@ int		key_funct(int k, t_env *e)
 		move(e, k);
 	if (k == KEY_Z || k == KEY_X)
 		e->c->mode = k;
+	if (k == KEY_C)
+	{
+		e->col = (e->col == 2 ? 0 : e->col + 1);
+		draw(e);
+	}
 	if (k == KEY_ESCAPE)
 		exit(0);
 	(void)e;

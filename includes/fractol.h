@@ -6,7 +6,7 @@
 /*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:45:34 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/20 18:24:22 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/03/30 22:07:48 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <limits.h>
 
 # define DB(x) ft_putendl(x)
-# define SQ(x) x * x
+# define SQ(x) (x * x)
 
 typedef struct	s_point
 {
@@ -33,7 +33,6 @@ typedef struct	s_mandel
 	t_point		cur;
 	long double	zoom;
 	int			iter;
-	int			*color;
 	double		c_r;
 	double		c_i;
 	double		z_r;
@@ -77,7 +76,6 @@ void			mandelbrot(t_env *e);
 void			init_mandel(t_env *e);
 void			init_current(t_env *e);
 void			zoom_mandel(t_env *e, int zoom);
-void			iter_mandel(t_env *e, int iter);
 void			init_img(t_env *e);
 void			init_julia(t_env *e);
 void			julia(t_env *e);
