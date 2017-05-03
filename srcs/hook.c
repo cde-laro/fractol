@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 16:44:27 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/23 17:34:44 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/03 23:16:24 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int		mouse_code(int x, int y, t_env *e)
 void	zoom(t_env *e, int k)
 {
 	if (k == KEY_PAD_ADD)
-		e->c->zoom *= 0.95;
+		e->c->zoom *= 0.90;
 	else
-		e->c->zoom *= 1.05;
+		e->c->zoom *= 1.1;
 	printf("zoom_lvl = %Lf", e->c->zoom);
 	draw(e);
 }
@@ -50,10 +50,10 @@ void	move(t_env *e, int k)
 void	iter(t_env *e, int k)
 {
 	if (k == KEY_PAD_6)
-		e->c->iter *= 1.05;
+		e->c->iter *= 1.1;
 	else
 	{
-		e->c->iter *= 0.95;
+		e->c->iter *= 0.90;
 		if (e->c->iter < 20)
 			e->c->iter = 20;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:45:34 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/30 22:07:48 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/03 22:03:18 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct	s_env
 	char		*name;
 	int			drawed;
 	int			win_x;
+	int			*colors;
 	int			win_y;
 	int			fract;
 	int			col;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/26 17:27:59 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/23 17:30:40 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/03 23:14:17 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,15 @@ void	pix_put_img(t_env *e, int x, int y, int iter)
 
 	if (iter >= e->c->iter)
 		return ;
-	iter = iter * 255 / (e->c->iter % 255 + 1);
-	color = 0xFF000000;
+
+	//iter = iter * 255 / (e->c->iter % 255 + 1);
+	//color = 0xFF000000;
+	color = e->colors[iter % 48];
 	if (e->col >= 0 && e->col <= 3)
 	{
-		r = ((color & 0xFF0000) >> 16) + (e->col == 0 ? iter : 0);
-		g = ((color & 0xFF00) >> 8) + (e->col == 1 ? iter : 0);
-		b = (color & 0xFF) + (e->col == 2 ? iter : 0);
+		r = ((color & 0xFF0000) >> 16);
+		g = ((color & 0xFF00) >> 8);
+		b = (color & 0xFF);
 	}
 	if (y >= 0 && x >= 0 && y < e->win_y && x < e->win_x)
 	{
