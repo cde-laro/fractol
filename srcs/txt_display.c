@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   txt_display.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 17:57:58 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/03/20 18:13:25 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/04 00:10:36 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 void	display_settings(t_env *e)
 {
 	system("clear");
-	ft_putstr("----- Current settings -----\nCenter\t: [");
-	ft_putnbr(fract_to_win_x(e, 0));
-	ft_putstr("][");
-	ft_putnbr(fract_to_win_y(e, 0));
-	ft_putstr("]\nZoom\t: ");
-	ft_putnbr(1 / e->c->zoom * 100);
+	ft_putstr("----- Current settings -----\nZoom\t: ");
+	ft_putnbr(0.1 / e->c->zoom);
 	ft_putstr("\nIterations: ");
 	ft_putnbr(e->c->iter);
 }

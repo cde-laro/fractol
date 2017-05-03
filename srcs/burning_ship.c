@@ -6,12 +6,11 @@
 /*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 09:44:14 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/05/03 23:50:09 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/04 00:27:52 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
 void		init_ship(t_env *e)
 {
@@ -40,7 +39,7 @@ void		ship(t_env *e)
 			e->c->z_r = 0;
 			e->c->z_i = 0;
 			i = 0;
-			while (i < e->c->iter && SQ(e->c->z_r) + SQ(e->c->z_i) < 10)
+			while (i < e->c->iter && SQ(e->c->z_r) + SQ(e->c->z_i) < 4)
 			{
 				tmp = e->c->z_r;
 				e->c->z_r = SQ(tmp) - SQ(e->c->z_i) - e->c->c_r;

@@ -6,7 +6,7 @@
 /*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:44:32 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/05/03 23:22:11 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/04 00:06:05 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void		mandelbrot(t_env *e)
 			while (SQ(e->c->z_r) + SQ(e->c->z_i) < 4 && i < e->c->iter)
 			{
 				tmp = e->c->z_r;
-				ft_putchar('|');
 				e->c->z_r = SQ(e->c->z_r) - SQ(e->c->z_i) + e->c->c_r;
 				e->c->z_i = 2 * tmp * e->c->z_i + e->c->c_i;
 				i++;

@@ -6,7 +6,7 @@
 /*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 16:44:27 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/05/03 23:16:24 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/04 00:06:00 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	zoom(t_env *e, int k)
 		e->c->zoom *= 0.90;
 	else
 		e->c->zoom *= 1.1;
-	printf("zoom_lvl = %Lf", e->c->zoom);
 	draw(e);
 }
 
@@ -76,7 +75,10 @@ int		key_funct(int k, t_env *e)
 		draw(e);
 	}
 	if (k == KEY_ESCAPE)
+	{
+		system("killall afplay");
 		exit(0);
+	}
 	(void)e;
 	return (0);
 }

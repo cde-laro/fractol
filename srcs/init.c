@@ -6,12 +6,41 @@
 /*   By: cde-laro <cde-laro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:45:04 by cde-laro          #+#    #+#             */
-/*   Updated: 2017/05/03 23:14:43 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/05/04 00:40:02 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
+
+void	init_color_2(t_env *e)
+{
+	e->colors[23] = 0x0000FFDF;
+	e->colors[24] = 0x0000FFFF;
+	e->colors[25] = 0x0000E07F;
+	e->colors[26] = 0x0000C0FF;
+	e->colors[27] = 0x0000A0FF;
+	e->colors[28] = 0x000080FF;
+	e->colors[29] = 0x000060FF;
+	e->colors[30] = 0x000040FF;
+	e->colors[31] = 0x000020FF;
+	e->colors[32] = 0x000000FF;
+	e->colors[33] = 0x001F80FF;
+	e->colors[34] = 0x003F00FF;
+	e->colors[35] = 0x006000FF;
+	e->colors[36] = 0x008100FF;
+	e->colors[37] = 0x00A000FF;
+	e->colors[38] = 0x00BF00FF;
+	e->colors[39] = 0x00DE00FF;
+	e->colors[40] = 0x00FD00FF;
+	e->colors[41] = 0x00FE00DF;
+	e->colors[42] = 0x00FF00C0;
+	e->colors[43] = 0x00FF009F;
+	e->colors[44] = 0x00FF007E;
+	e->colors[45] = 0x00FF005F;
+	e->colors[46] = 0x00FF0040;
+	e->colors[47] = 0x00FF0020;
+}
 
 void	init_color(t_env *e)
 {
@@ -39,31 +68,7 @@ void	init_color(t_env *e)
 	e->colors[20] = 0x0000FF7D;
 	e->colors[21] = 0x0000FF9E;
 	e->colors[22] = 0x0000FFBF;
-	e->colors[23] = 0x0000FFDF;
-	e->colors[24] = 0x0000FFFF;
-	e->colors[25] = 0x0000E07F;
-	e->colors[26] = 0x0000C0FF;
-	e->colors[27] = 0x0000A0FF;
-	e->colors[28] = 0x000080FF;
-	e->colors[29] = 0x000060FF;
-	e->colors[30] = 0x000040FF;
-	e->colors[31] = 0x000020FF;
-	e->colors[32] = 0x000000FF;
-	e->colors[33] = 0x001F80FF;
-	e->colors[34] = 0x003F00FF;
-	e->colors[35] = 0x006000FF;
-	e->colors[36] = 0x008100FF;
-	e->colors[37] = 0x00A000FF;
-	e->colors[38] = 0x00BF00FF;
-	e->colors[39] = 0x00DE00FF;
-	e->colors[40] = 0x00FD00FF;
-	e->colors[41] = 0x00FE00FF;
-	e->colors[42] = 0x00FF00C0;
-	e->colors[43] = 0x00FF009F;
-	e->colors[44] = 0x00FF007E;
-	e->colors[45] = 0x00FF005F;
-	e->colors[46] = 0x00FF0040;
-	e->colors[47] = 0x00FF0020;
+	init_color_2(e);
 }
 
 void	init_img(t_env *e)
